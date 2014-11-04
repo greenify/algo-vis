@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="css/reduce.css">
+
+<div class="header">
+	<textarea id="obj" rows="4">
+		[{id:1, name: "Peter"}, {id:2, name: "Daniel"}]
+	</textarea>
+	<input type="text" id="map" value="function(el){ return el.id }" />
+	<button id="send">Redraw</button>
+</div>
+
+
+<div id="playground"></div>
+
+<script src="js/move.js"></script>
+<script src="js/map.js"></script>
+<script>
+id('send').addEventListener('click', function(){
+	var list = eval(id('obj').value);
+	eval("var mapFun="+id('map').value);
+	mapMe({el: document.getElementById('playground'), li: list, map: mapFun});
+});
+</script>
