@@ -1,9 +1,7 @@
 <link rel="stylesheet" href="css/reduce.css">
 
 <div class="header">
-	<textarea id="obj" rows="4">
-		[{id:1, name: "Peter"}, {id:2, name: "Daniel"}]
-	</textarea>
+	<textarea id="obj" rows="3">[{id:1, name: "David"}, {id:2, name: "Seb"}]</textarea>
 	<input type="text" id="map" value="function(el){ return el.id }" />
 	<button id="send">Redraw</button>
 </div>
@@ -20,3 +18,5 @@ id('send').addEventListener('click', function(){
 	mapMe({el: document.getElementById('playground'), li: list, map: mapFun});
 });
 </script>
+
+<a id="forkme" href="https://github.com/greenify/algo-vis"><img style="position: absolute; top: 0; right: 0; border: 0;" src="img/forkme.png" alt="Fork me on GitHub" data-canonical-src="img/forkme.png"></a>
