@@ -1,8 +1,8 @@
 <link rel="stylesheet" href="css/reduce.css">
 
 <div class="header">
-	<input type="text" id="list" value="abc" />
-	Memo: <input type="text" id="memo" value="" />
+	<input type="text" id="list" value="'abc'" />
+	Memo: <input type="text" id="memo" value="''" />
 	<input type="text" id="reduce" value="function(m,e){ return m + e}" />
 	<button id="send">Redraw</button>
 </div>
@@ -14,9 +14,10 @@
 <script src="js/reduce.js"></script>
 <script>
 id('send').addEventListener('click', function(){
-	var list = JSON.parse(id('list').value);
-	var memoVal = JSON.parse(id('memo').value);
-	eval("var redFun="+id('reduce').value); reduceMe({el: document.getElementById('playground'), li: list, memo: memoVal});
+	eval("var list="+id('list').value);
+	eval("var memoVal="+id('memo').value);
+	eval("var redFun="+id('reduce').value);
+	reduceMe({el: document.getElementById('playground'), li: list, memo: memoVal});
 });
 </script>
 
